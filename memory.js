@@ -2,6 +2,7 @@ class Game{
     constructor(){
         this.cols = 8;
         this.rows = 8;
+        this.totalCards = (this.cols * this.rows) / 2;
         this.cardCounter = {};
         this.setCards = {};
         this.turns = 0;
@@ -17,7 +18,7 @@ class Game{
     }
 
     createCardCounter(){
-        for(let i=1; i<=32; i++){
+        for(let i=1; i<=this.totalCards; i++){
             this.cardCounter[i] = 0;
         }
     }
@@ -32,7 +33,7 @@ class Game{
     }
 
     randomCards(setCardsId){
-        let randCard = Math.floor((Math.random() * 32) + 1);
+        let randCard = Math.floor((Math.random() * this.totalCards) + 1);
         if(this.cardCounter[randCard] > 1){
             this.randomCards(setCardsId);
         } else {
@@ -71,8 +72,8 @@ class Game{
         for(let r=0; r<this.rows; r++){
             for(let c=0; c<this.cols; c++){
                 let id = c + "-" + r;
-                // let text = "ID: " + id + "/ Inhalt: " + this.setCards[id] + ".jpg<br>";
-                let text = this.setCards[id] + "<br>";
+                let text = "ID: " + id + "/ Inhalt: " + this.setCards[id] + ".jpg<br>";
+                // let text = this.setCards[id] + "<br>";
                 // let text = "ID: " + id + "/ Counter: " + this.cardCounter[id] + "/ Inhalt: " + this.setCards[id] + ".jpg<br>";
 
                 let test = document.createElement("div");
@@ -84,7 +85,7 @@ class Game{
     }
 
     testCounter(){
-        for(let i=1; i<=32; i++){
+        for(let i=1; i<=this.totalCards; i++){
             let text2 = "Counter: " + this.cardCounter[i] + "<br>";
         let test2 = document.createElement("div");
                 test2.setAttribute("id", "counter" + i);
