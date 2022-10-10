@@ -25,6 +25,32 @@ class Game{
     setCardList(){
         for(let r=0; r<this.rows; r++){
             for(let c=0; c<this.cols; c++){
+                let setCardsId = c + "-" + r;
+                this.randomCards(setCardsId);
+            }
+        }
+    }
+
+    randomCards(setCardsId){
+        let randCard = Math.floor((Math.random() * 32) + 1);
+        if(this.cardCounter[randCard] > 1){
+            this.randomCards(setCardsId);
+        } else {
+            this.cardCounter[randCard]++;
+            this.setCards[setCardsId] = randCard;
+        }
+    }
+
+
+    /* createCardCounter(){
+        for(let i=1; i<=32; i++){
+            this.cardCounter[i] = 0;
+        }
+    }
+
+    setCardList(){
+        for(let r=0; r<this.rows; r++){
+            for(let c=0; c<this.cols; c++){
                 let setCardId = c + "-" + r;
                 this.randomCards(setCardId);
             }
@@ -40,7 +66,7 @@ class Game{
             this.setCards[setCardId] = randCard;
         }
     }
-
+ */
      testfunc(){
         for(let r=0; r<this.rows; r++){
             for(let c=0; c<this.cols; c++){
