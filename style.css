@@ -1,0 +1,9 @@
+body {
+    font-family: Verdana;
+}
+
+#board {
+    border: 5px solid black;
+    display: flex;
+    flex-wrap: wrap;  
+}
