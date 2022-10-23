@@ -111,15 +111,37 @@ class Game{
     }
 
     win(){
-        alert("You win!");
+        document.getElementById("winTurns").innerHTML = this.turns;
+        let youWin = document.getElementById("youWin");
+        youWin.style.transform = "translate(0, 0)";
     }
 
 }
 
 window.onload = function(){
+    document.getElementById("startGameButton").addEventListener("click", function(e){ gameBegin(e);} );
+}
 
-    let cols = 4;
-    let rows = 4;
+function gameBegin(e) {
+
+    document.getElementById("startGame").style.transform = "translate(0, -500px)";
+    document.getElementById("main").style.display = "contents";
+    
+    let cols;
+    let rows;
+    let pickTheme = document.getElementById("gameSettings");
+
+    switch(pickTheme.value){
+        case "demo":
+            cols = 4;
+            rows = 4;
+            break;
+        case "animals":
+            cols = 10;
+            rows = 10;
+            break;
+    }
+
 
     game = new Game(cols, rows);
     game.createBoardFrame();
