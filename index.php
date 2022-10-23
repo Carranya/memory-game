@@ -9,13 +9,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header"><h1>Memory</h1></header>
-    <div id="main">
-        <div id="board"></div>
+    
+    <div id="header"><h1>Memory</h1></div>
+    
+    <div class="centerBlock">
+        <div id="startGame" class="infoBlock">
+            <h1>New Game</h1>
+            <select id="gameSettings">
+                <option value="demo" selected="selected">Demo</option>
+                <option value="animals">Animals</option>
+            </select>
+            <p><button id="startGameButton">Start Game</button></p>
+        </div>
     </div>
-    <div><p>Turns: <span id="turns">0</span></p></div>
-    <div id="test"></div>
-    <div id="test2"></div>
+
+    <div id="main">
+        <div class="centerBlock">
+            <div id="board"></div>
+        </div>
+    <div><p>Turns: <span id="turns">0</span></p></div> 
+    <div><p><a href="index.php" class="newGame">Neustart</a></p></div>
+    </div>
+
+    <div class="centerBlock">
+        <div id="youWin" class="infoBlock">
+            <h1>You win!</h1>
+            <p>Total turns: <span id="winTurns">0</span></p>
+            <p><a href="index.php" class="newGame">New Game?</a></p>
+        </div>
+    </div>
+
 </body>
 </html>
 
