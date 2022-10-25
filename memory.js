@@ -1,7 +1,8 @@
 class Game{
-    constructor(cols, rows){
+    constructor(cols, rows, theme){
         this.cols = cols;
         this.rows = rows;
+        this.theme = theme;
         this.totalCards = (this.cols * this.rows) / 2;
         this.cardCounter = {};
         this.setCards = {};
@@ -67,7 +68,7 @@ class Game{
         
         if(this.setCards[cardId] != "empty"){
             let pickCard = this.setCards[cardId];
-            card.src = "img/" + pickCard + ".jpg";
+            card.src = "img/" + this.theme + pickCard + ".jpg";
             
             if(this.counter == 0){
                 this.counter++;            
@@ -129,21 +130,24 @@ function gameBegin(e) {
     
     let cols;
     let rows;
+    let theme;
     let pickTheme = document.getElementById("gameSettings");
 
     switch(pickTheme.value){
         case "demo":
             cols = 4;
             rows = 4;
+            theme = "demo/";
             break;
-        case "animals":
-            cols = 10;
-            rows = 10;
+        case "colors":
+            cols = 6;
+            rows = 5;
+            theme = "colors/";
             break;
     }
 
 
-    game = new Game(cols, rows);
+    game = new Game(cols, rows, theme);
     game.createBoardFrame();
     game.createCardCounter();
     game.setCardList();
