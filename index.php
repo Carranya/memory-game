@@ -17,7 +17,7 @@
             <h1>New Game</h1>
             <select id="gameSettings">
                 <option value="demo" selected="selected">Demo</option>
-                <option value="animals">Animals</option>
+                <option value="colors">Colors</option>
             </select>
             <p><button id="startGameButton">Start Game</button></p>
         </div>
