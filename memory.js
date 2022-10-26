@@ -139,10 +139,17 @@ function gameBegin(e) {
             rows = 4;
             theme = "demo/";
             break;
+
         case "colors":
             cols = 6;
             rows = 5;
             theme = "colors/";
+            break;
+
+        case "numbers":
+            cols = 5;
+            rows = 4;
+            theme = "numbers/";
             break;
     }
 
