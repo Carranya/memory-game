@@ -18,6 +18,7 @@
             <select id="gameSettings">
                 <option value="demo" selected="selected">Demo</option>
                 <option value="colors">Colors</option>
+                <option value="numbers">Numbers</option>
             </select>
             <p><button id="startGameButton">Start Game</button></p>
         </div>
