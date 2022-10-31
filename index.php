@@ -16,8 +16,7 @@
         <div id="startGame" class="infoBlock">
             <h1>New Game</h1>
             <select id="gameSettings">
-                <option value="demo" selected="selected">Demo</option>
-                <option value="colors">Colors</option>
+                <option value="colors" selected="selected">Colors</option>
                 <option value="numbers">Numbers</option>
             </select>
             <p><button id="startGameButton">Start Game</button></p>
