@@ -39,6 +39,12 @@
         </div>
     </div>
 
+    <div class="centerBox">
+        <div id="smartPhoneDisplay">
+            <p>Please turn your tablet to landscape mode</p>
+        </div>
+    </div>
+
 </body>
 </html>
 
