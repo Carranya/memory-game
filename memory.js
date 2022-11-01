@@ -141,8 +141,8 @@ function gameBegin(e) {
             break;
 
         case "colors":
-            cols = 6;
-            rows = 5;
+            cols = 5;
+            rows = 6;
             theme = "colors/";
             break;
 
