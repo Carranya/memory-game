@@ -12,7 +12,7 @@ body {
 
 #board {
     border: 5px solid black;
-    display: flex;
+    display: none;
     flex-wrap: wrap;  
 }
 
@@ -60,4 +60,14 @@ body {
     border: 5px solid black;
     position: absolute;
     transition: transform 1s;
+}
+
+@media (min-width: 550px){
+    #board {
+        display: flex;
+    }
+
+    #smartPhoneDisplay {
+        display: none;
+    }
 }
